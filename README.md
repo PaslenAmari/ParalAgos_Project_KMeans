@@ -36,7 +36,7 @@ python setup.py build_ext --inplace
 
 ### Data Preparation
 The implementation uses the HandOutlines dataset from the UCR Time Series Archive:
-- Dataset is automatically downloaded and preprocessed when running the code
+- Dataset is automatically downloaded (password for archive opening is already built in code) and preprocessed when running the code
 - Format: 1,370 samples with 2,709 features each
 - Data is normalized during preprocessing
 
