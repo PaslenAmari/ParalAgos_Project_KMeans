@@ -15,9 +15,9 @@ The implementation uses the K-means clustering algorithm with the following step
 - Focus on parallelizing the most computationally intensive parts of the algorithm
 - Uses parallel for loops with thread-based parallelism
 
-## 2. Instructions for Reproduction
+2. Instructions for Reproduction
 
-### Environment Setup
+Environment Setup
 ```bash
 # Clone the repository
 git clone https://github.com/PaslenAmari/parallel-kmeans.git
