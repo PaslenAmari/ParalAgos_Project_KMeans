@@ -1,26 +1,44 @@
 # ParalAgos_Project_KMeans - Parallel K-means Clustering Implementation
 The Project for optimization purposes for K-Means clustering algotithm (with benchmarks - use dataset with at least 70000 samples)
 
-This repository contains sequential and parallel implementations of the k-means clustering algorithm. 
-The parallel version uses OpenMP via Cython to accelerate computations.
+# Parallel K-means Clustering Implementation
+
+This repository contains sequential and parallel implementations of the k-means clustering algorithm using the HandOutlines dataset from the UCR Time Series Archive.
+
+## Project Structure
+```
+parallel-kmeans/
+├── src/            # Source code
+├── data/           # Dataset (downloaded automatically)
+├── results/        # Benchmark results
+└── tests/          # Unit tests
+```
 
 ## Requirements
-
 - Python 3.7+
 - NumPy
 - Cython
-- A C compiler with OpenMP support (gcc recommended)
-- scikit-learn (for dataset generation)
+- scikit-learn
+- matplotlib
+- OpenMP-compatible C compiler
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-.....
+git clone https://github.com/yourusername/parallel-kmeans
+cd parallel-kmeans
 ```
-2. Install dependencies:
+
+2. Create and activate a virtual environment (optional but recommended):
 ```bash
-pip install numpy cython scikit-learn
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
 ```
 
 4. Compile the Cython extension:
@@ -30,61 +48,35 @@ python setup.py build_ext --inplace
 
 ## Dataset
 
-The implementation uses a synthetic dataset generated using scikit-learn's `make_blobs` function. The default configuration generates:
-- 70,000 samples
-- 10 features per sample
-- 8 clusters
-- Fixed random seed (42) for reproducibility
+The implementation uses the HandOutlines dataset from the UCR Time Series Archive:
+- 370,500 samples
+- 2,709 features per sample
+- Automatically downloaded on first run
 
 ## Running the Benchmark
 
 ```bash
-python benchmark.py
+python src/benchmark.py
 ```
-This will run both sequential and parallel implementations and output timing results and speedup calculations.
 
-## Parallelization Strategy
+This will:
+1. Download the dataset (if not already present)
+2. Run both sequential and parallel implementations
+3. Generate a speedup plot in the results directory
 
-The parallel implementation accelerates two main parts of the k-means algorithm:
+## Results
 
-1. **Point Assignment Phase**: The computation of distances between points and centroids is parallelized using OpenMP's parallel for loop (`prange`). Each thread processes a subset of the data points independently.
+The benchmark will create:
+- Execution time comparisons
+- Speedup measurements
+- A plot showing speedup vs number of threads
 
-2. **Centroid Update Phase**: The accumulation of points for centroid updates is parallelized using a reduction pattern. Each thread maintains local sums which are then combined to compute the final centroids.
+Results are saved in the `results/` directory.
 
-Key optimizations include:
-- Using `nogil` contexts to release the GIL during parallel sections
-- Memory views for efficient array access
-- Parallel reduction for centroid updates
+## Contributing
 
-## Performance Analysis
+Feel free to open issues or submit pull requests.
 
-The implementation shows significant speedup with multiple threads:
+## License
 
-1. The speedup is approximately linear up to 4 threads
-2. Beyond 4 threads, the speedup may plateau due to:
-   - Memory bandwidth limitations
-   - Overhead from thread management
-   - Hardware thread count limitations
-
-Actual speedup values will depend on:
-- Hardware configuration (number of cores, memory bandwidth)
-- Dataset size and dimensionality
-- Number of clusters
-- Number of iterations until convergence
-
-## Running with Custom Data
-
-To use your own dataset:
-
-1. Prepare your data as a NumPy array of shape (n_samples, n_features)
-2. Save it in a format of your choice (e.g., .npy, .csv)
-3. Modify the benchmark script to load your data instead of generating synthetic data
-
-Example with custom data:
-```python
-# Load custom data
-X = np.load('your_data.npy')  # or pd.read_csv('your_data.csv').values
-
-# Run clustering
-labels, centroids = kmeans_parallel(X, n_clusters=8, n_threads=4)
-```
+[Your chosen license]
