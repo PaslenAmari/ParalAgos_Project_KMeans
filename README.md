@@ -20,7 +20,7 @@ The implementation uses the K-means clustering algorithm with the following step
 ### Environment Setup
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/parallel-kmeans.git
+git clone https://github.com/PaslenAmari/parallel-kmeans.git
 cd parallel-kmeans
 
 # Create and activate virtual environment
