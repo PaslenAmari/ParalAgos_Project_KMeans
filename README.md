@@ -1,7 +1,5 @@
-# ParalAgos_Project_KMeans - Parallel K-means Clustering Implementation
-The Project for optimization purposes for K-Means clustering algotithm (with benchmarks - use dataset with at least 70000 samples)
-
 # Parallel K-means Clustering Implementation
+The Project for optimization purposes for K-Means clustering algotithm (with benchmarks - use dataset with at least 70000 samples)
 
 This repository contains sequential and parallel implementations of the k-means clustering algorithm using the HandOutlines dataset from the UCR Time Series Archive.
 
