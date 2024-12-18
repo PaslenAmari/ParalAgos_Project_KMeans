@@ -70,11 +70,3 @@ The benchmark will create:
 - A plot showing speedup vs number of threads
 
 Results are saved in the `results/` directory.
-
-## Contributing
-
-Feel free to open issues or submit pull requests.
-
-## License
-
-[Your chosen license]
