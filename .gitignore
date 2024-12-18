@@ -1,0 +1,26 @@
+# Compiled Python files
+*.pyc
+*.pyd
+*.so
+__pycache__/
+
+# Build directories
+build/
+dist/
+*.egg-info/
+
+# Virtual environment
+venv/
+env/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Test data directories
+data/
+results/
