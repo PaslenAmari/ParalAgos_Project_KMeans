@@ -33,6 +33,10 @@ pip install -r requirements.txt
 # Compile Cython code
 python setup.py build_ext --inplace
 ```
+Note: The project uses .gitignore to exclude compiled files, build directories, and virtual environments. After cloning, you'll need to:
+- Create your own virtual environment (it won't be copied from the repository)
+- Compile the Cython code locally (*.pyd files are not tracked)
+- The dataset will be downloaded automatically on first run
 
 ### Data Preparation
 The implementation uses the HandOutlines dataset from the UCR Time Series Archive:
