@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: parallel-kmeans
+Version: 1.0
+Summary: Parallel K-means clustering implementation using OpenMP
+Requires-Python: >=3.7

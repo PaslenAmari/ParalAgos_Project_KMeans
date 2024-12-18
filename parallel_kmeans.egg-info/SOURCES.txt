@@ -1,0 +1,12 @@
+README.md
+setup.py
+parallel_kmeans.egg-info/PKG-INFO
+parallel_kmeans.egg-info/SOURCES.txt
+parallel_kmeans.egg-info/dependency_links.txt
+parallel_kmeans.egg-info/requires.txt
+parallel_kmeans.egg-info/top_level.txt
+src/__init__.py
+src/benchmark.py
+src/data_loader.py
+src/parallel_kmeans.c
+src/sequential_kmeans.py
