@@ -94,6 +94,8 @@ The speedup graph is automatically generated in `results/speedup_plot.png` showi
 
 ## Repository Structure
 ```
+Repository Structure
+
 parallel-kmeans/
 ├── src/                 # Source code
 │   ├── sequential_kmeans.py
@@ -101,6 +103,16 @@ parallel-kmeans/
 │   ├── data_loader.py
 │   └── benchmark.py
 ├── data/                # Dataset (downloaded automatically)
-├── results/             # Benchmark results and plots
-└── tests/               # Unit tests
+├── results/            # Benchmark results and plots
+├── tests/              # Unit tests
+└── .gitignore         # Git ignore rules
+
+Note: The repository uses .gitignore to exclude:
+- Compiled Python files (*.pyc, *.pyd, *.so)
+- Build directories
+- Virtual environment folders
+- IDE specific files
+- Temporary and test data directories
+
+These files and directories are excluded to keep the repository clean and ensure that only source code is tracked by version control.
 ```
